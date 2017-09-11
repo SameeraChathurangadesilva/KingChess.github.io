@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chess Game</title>
+
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css">
+    <link href="css/bootstrap-theme.min.css">
+    <link href="css/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/title.png">
+
+    <style>
+
+        .chessboard{
+            border: 25px solid #333;
+            width: 640px;
+            height: 640px;
+            margin: 20px;
+            left: 300px;
+            position: absolute;
+            top:100px;
+        }
+
+        .white{
+            float: left;
+            width: 80px;
+            height: 80px;
+            background-color:#fff;
+            font-size: 50px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .white:hover{
+            cursor: pointer;
+        }
+
+        .black:hover{
+            cursor:pointer;
+        }
+
+        .black{
+            float: left;
+            width: 80px;
+            height: 80px;
+            background-color:#999;
+            font-size: 50px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .white:hover{
+            -webkit-box-shadow:inset 0px 0px 15px 15px rgba(243,156,18,.8);
+            box-shadow: inset 0px 0px 15px 15px rgba(243,156,18,.8);
+
+            transition: box-shadow 0.25s ease-out;
+            transition: bground-color 0.25s ease-in ;
+        }
+        .black:hover{
+            -webkit-box-shadow:inset 0px 0px 15px 15px rgba(243,156,18,.8);
+            box-shadow: inset 0px 0px 15px 15px rgba(243,156,18,.8);
+
+            transition: box-shadow 0.25s ease-out;
+            transition: bground-color 0.25s ease-in ;
+        }
+        body{
+            /*background-image: url("images/IMG_3899.PNG");*/
+        }
+
+        div:hover{
+
+            /*-webkit-box-shadow:inset 0px 0px 15px 15px rgba(243,156,18,.8);*/
+            /*box-shadow: inset 0px 0px 15px 15px rgba(243,156,18,.8);*/
+
+            /*transition: box-shadow 0.25s ease-out;*/
+            /*transition: bground-color 0.25s ease-in ;*/
+        }
+        h1{
+            font-size: 30px;
+            color: black;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+<h1>Chess Master</h1>
+
+<div class="container">
+
+    <div class="chessboard">
+
+        <!--1st-->
+        <div class="white">
+            <div id="A8">&#9820;</div>
+        </div>
+
+        <div class="black">
+           <div id="B8">&#9822;</div>
+        </div>
+
+        <div class="white">
+            <div id="C8">&#9821;</div>
+        </div>
+
+        <div class="black">
+            <div id="D8">&#9819;</div>
+        </div>
+
+        <div class="white">
+            <div  id="E8">&#9818;</div>
+        </div>
+        <div class="black">
+            <div  id="F8">&#9821;</div>
+        </div>
+
+        <div class="white">
+            <div  id="G8">&#9822;</div>
+        </div>
+
+        <div class="black">
+            <div  id="H8">&#9820;</div>
+        </div>
+
+        <!--2nd-->
+
+        <div class="black">
+            <div  id="A7">&#9821;</div>
+        </div>
+
+        <div class="white">
+            <div  id="B7">&#9821;</div>
+        </div>
+
+        <div class="black">
+            <div id="C7">&#9821;</div>
+        </div>
+
+        <div class="white">
+            <div  id="D7">&#9821;</div>
+        </div>
+
+        <div class="black">
+            <div  id="E7">&#9821;</div>
+        </div>
+
+        <div class="white">
+            <div  id="F7">&#9821;</div>
+        </div>
+
+        <div class="black">
+            <div  id="G7">&#9821;</div>
+        </div>
+
+        <div class="white">
+            <div  id="H7">&#9821;</div>
+        </div>
+
+        <!--3th-->
+
+        <div class="white"><div  id="A6"></div></div>
+        <div class="black"><div  id="B6"></div></div>
+        <div class="white"><div  id="C6"></div></div>
+        <div class="black"><div  id="D6"></div></div>
+        <div class="white"><div  id="E6"></div></div>
+        <div class="black"><div  id="F6"></div></div>
+        <div class="white"><div  id="G6"></div></div>
+        <div class="black"><div  id="H6"></div></div>
+
+        <!--4th-->
+
+        <div class="black"><div  id="A5"></div></div>
+        <div class="white"><div  id="B5"></div></div>
+        <div class="black"><div  id="C5"></div></div>
+        <div class="white"><div  id="D5"></div></div>
+        <div class="black"><div  id="E5"></div></div>
+        <div class="white"><div  id="F5"></div></div>
+        <div class="black"><div  id="G5"></div></div>
+        <div class="white"><div  id="H5"></div></div>
+
+        <!--5th-->
+
+        <div class="white"><div  id="A4"></div></div>
+        <div class="black"><div  id="B4"></div></div>
+        <div class="white"><div  id="C4"></div></div>
+        <div class="black"><div  id="D4"></div></div>
+        <div class="white"><div  id="E4"></div></div>
+        <div class="black"><div  id="F4"></div></div>
+        <div class="white"><div  id="G4"></div></div>
+        <div class="black"><div  id="H4"></div></div>
+
+        <!--6th-->
+
+        <div class="black"><div  id="A3"></div></div>
+        <div class="white"><div  id="B3"></div></div>
+        <div class="black"><div  id="C3"></div></div>
+        <div class="white"><div  id="D3"></div></div>
+        <div class="black"><div  id="E3"></div></div>
+        <div class="white"><div  id="F3"></div></div>
+        <div class="black"><div  id="G3"></div></div>
+        <div class="white"><div  id="H3"></div></div>
+
+        <!--7th-->
+
+        <div class="white">
+            <div id="A2">&#9817;</div>
+        </div>
+
+        <div class="black">
+            <div  id="B2">&#9817;</div>
+        </div>
+
+        <div class="white">
+            <div  id="C2">&#9817;</div>
+        </div>
+
+        <div class="black">
+            <div  id="D2">&#9817;</div>
+        </div>
+
+        <div class="white">
+            <div  id="E2">&#9817;</div>
+        </div>
+
+        <div class="black">
+            <div  id="F2">&#9817;</div>
+        </div>
+
+        <div class="white">
+            <div  id="G2">&#9817;</div>
+        </div>
+
+        <div class="black">
+            <div  id="H2">&#9817;</div>
+        </div>
+
+        <!--8th-->
+
+        <div class="black">
+            <div  id="A1">&#9814;</div>
+        </div>
+
+        <div class="white">
+            <div  id="B1">&#9816;</div>
+        </div>
+
+        <div class="black">
+            <div  id="C1">&#9815;</div>
+        </div>
+
+        <div class="white">
+            <div  id="D1">&#9813;</div>
+        </div>
+
+        <div class="black">
+            <div  id="E1">&#9812;</div>
+        </div>
+
+        <div class="white">
+            <div  id="F1">&#9815;</div>
+        </div>
+
+        <div class="black">
+            <div  id="G1">&#9816;</div>
+        </div>
+
+        <div class="white">
+            <div  id="H1">&#9814;</div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/home-controller.js"></script>
+<script src="js/jquery-ui.js"></script>
+</body>
+</html>
